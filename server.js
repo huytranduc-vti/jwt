@@ -1,6 +1,6 @@
-import express from 'express';
-import jwt from 'jsonwebtoken';
-import dotenv from 'dotenv';
+import express from "express";
+import jwt from "jsonwebtoken";
+import dotenv from "dotenv";
 
 dotenv.config();
 
@@ -9,21 +9,31 @@ const PORT = process.env.PORT || 5000;
 
 app.use(express.json());
 
-const books = [
+const information = [
   {
     id: 1,
-    name: 'Duc Huy',
-    age: '21',
+    name: "Duc Huy",
+    age: "21",
   },
   {
     id: 2,
-    name: 'Duc Dat',
-    age: '22',
+    name: "Duc Dat",
+    age: "22",
+  },
+  {
+    id: 3,
+    name: "Minh Hieu",
+    age: "24",
+  },
+  {
+    id: 4,
+    name: "Hai Nam",
+    age: "24",
   },
 ];
 
-app.get('/books', authenToken, (req, res) => {
-  res.json({ status: 'Success', data: books });
+app.get("/information", authenToken, (req, res) => {
+  res.json({ status: "Success", data: information });
 });
 
 // create middleware to authentication JWT
@@ -38,7 +48,7 @@ function authenToken(req, res, next) {
   //   if (err) res.sendStatus(403);
   //   next();
   // });
-  next()
+  next();
 }
 
 app.listen(PORT, () => {

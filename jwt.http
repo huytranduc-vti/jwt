@@ -1,8 +1,8 @@
 
 ###
-GET http://localhost:5000/books
+GET http://localhost:5000/information
 ###
-GET http://localhost:5000/books
+GET http://localhost:5000/information
 Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhvbGV0ZXgiLCJpYXQiOjE2MjA0NzQzMDQsImV4cCI6MTYyMDQ3NDMzNH0.NsKCpIBolNdQK-l4chi2urajCvXU529VISFNHnqYkzQ
 
 ###
@@ -11,7 +11,8 @@ POST http://localhost:5500/login
 Content-Type: application/json
 
 {
-  "username": "Duc Huy Login"
+  "username": "Duc Huy",
+  "password": "1"
 }
 
 ###
